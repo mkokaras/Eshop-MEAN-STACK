@@ -1,0 +1,60 @@
+<div class="shop_top">
+<div class="container">
+			<form ng-submit = "pay.enterOrder(paydata)"> 
+					<div class="register-top-grid">
+							<h3>PAYMENT</h3>
+							<div>
+								<span>First Name<label>*</label></span>
+								<input type="text" ng-model="pay.paydata.firstname"> 
+							</div>
+							<div>
+								<span>Last Name<label>*</label></span>
+								<input type="text" ng-model="pay.paydata.lastname"> 
+							</div>
+							<div>
+								<span>Shipping Adress<label>*</label></span>
+								<input type="text" ng-model="pay.paydata.shippingaddress"> 
+							</div>
+							<div>
+								<span>Phone Number<label>*</label></span>
+								<input type="text" ng-model="pay.paydata.phonenumber"> 
+							</div>
+							<div>
+								<span>Postal Code<label>*</label></span>
+								<input type="text" ng-model="pay.paydata.postalcode"> 
+							</div>
+							<div class="clear"> </div>
+							<div class="clear"> </div>
+					</div>
+
+					<div class="clear"> </div>
+
+					<p><b>Total balance:</b>{{pay.price}}$</p>
+
+					<br>
+
+					<p><b></b>(We only accept cash on delivery)</b></p>
+
+					<br>
+
+					<input type="submit" value="submit order" ng-show="pay.show">
+			</form>
+
+		</div>
+</div>
+
+<br>
+
+<div class="jumbotron text-center" ng-show="pay.loading">
+	<span class="glyphicon glyphicon-repeat spinner"></span>
+	<p>Loading...</p>
+</div>
+
+<div class="row show-hide-message" ng-show="pay.successMsg">
+	<div class="alert alert-success">{{ pay.successMsg}}</div>
+</div>
+<br>
+<div class="row show-hide-message" ng-show="pay.errorMsg">
+	<div class="alert alert-danger">{{ pay.errorMsg}}</div>
+</div>
+

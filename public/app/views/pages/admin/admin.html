@@ -1,0 +1,57 @@
+<div class="main">
+    <div class="shop_top">
+        <div class="container">
+                    <form ng-submit="product.enterProd(prodData);" > 
+                            <div class="register-top-grid">
+                                    <h3>PERSONAL INFORMATION</h3>
+                                    <div>
+                                        <span> Brand <label>*</label></span>
+                                        <input type="text" ng-model="product.prodData.brand"> 
+                                    </div>
+                                    <div>
+                                        <span> Size <label>*</label></span>
+                                        <input type="text" ng-model="product.prodData.size"> 
+                                    </div>
+                                    <div>
+                                        <span> Name <label>*</label></span>
+                                        <input type="text" ng-model="product.prodData.name"> 
+                                    </div>
+                                    <div>
+                                        <span> Quantity <label>*</label></span>
+                                        <input type="text" ng-model="product.prodData.quantity"> 
+                                    </div>
+                                    <div>
+                                        <span> Price <label>*</label></span>
+                                        <input type="text" ng-model="product.prodData.price"> 
+                                    </div>
+                                    <div>
+                                        <span> Link <label>*</label></span>
+                                        <input type="text" ng-model="product.prodData.link"> 
+                                    </div>
+                                    <div class="clear"> </div>
+                                    <div class="clear"> </div>
+                            </div>
+                            <div class="clear"> </div>
+                            <div class="clear"> </div>
+                            <input type="submit" value="submit">
+                    </form>
+                </div>
+        </div>
+    </div>
+    
+
+    <br>
+
+    <div class="jumbotron text-center" ng-show="product.loading">
+        <span class="glyphicon glyphicon-repeat spinner"></span>
+        <p>Loading...</p>
+    </div>
+    
+    <div class="row show-hide-message" ng-show="product.successMsg">
+        <div class="alert alert-success">{{ product.successMsg}}</div>
+    </div>
+    <br>
+    <div class="row show-hide-message" ng-show="product.errorMsg">
+        <div class="alert alert-danger">{{ product.errorMsg}}</div>
+    </div>
+    

@@ -1,0 +1,34 @@
+<div class="main">
+	<div class="shop_top">
+		<div class="container"> 
+			<div class="row shop_box-top">
+				<div class="col-md-3 shop_box">
+					<table class = "table table-bordered">
+					<thead class = "thead-dark">
+						<th><a ng-click = "OrderGrid('price')">Price: Low to High</a></th>
+						<th><a ng-click = "OrderGrid('-price')">Price: High to Low</a></th>
+					</thead>
+					</table>
+				</div>
+			</div>
+			<div class="row shop_box-top">
+				<div ng-repeat="product in shop.products | unique:'name'">
+					<div class="col-md-3 shop_box" ng-click="shop.shareMyData({name : product.name});">
+
+						<img src={{product.link}} class="img-responsive" alt=""/>
+
+						<div class="shop_desc">
+
+							<h3><a ng-click="shop.shareMyData({name : product.name});">{{product.name}}</a></h3>
+
+							<p>{{product.brand}} </p>
+
+							<span class="actual">{{product.price}} $</span><br>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+	

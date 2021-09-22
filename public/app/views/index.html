@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <base href="/">
+
+    <title>Eshop</title>
+
+    <link href="starter-template.css" rel="stylesheet">
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <link href="assets/css/bootstrap.css" rel='stylesheet' type='text/css' />
+
+    <link href="assets/css/style.css" rel='stylesheet' type='text/css' />
+
+
+    <script src ="assets/js/angular.js"></script>
+
+    <script src="assets/js/angular-route.js"></script>
+
+    <script src="assets/js/angular-touch.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-filter/0.5.8/angular-filter.min.js"></script>
+
+    <script src="app/app.js"></script>
+
+    <script src="app/routes.js"></script>
+
+    <script src="app/controllers/userCtrl.js"></script>
+
+    <script src="app/controllers/mainCtrl.js"></script>
+
+    <script src="app/controllers/productCtrl.js"></script>
+
+    <script src="app/controllers/shopCtrl.js"></script>
+
+    <script src="app/controllers/cartCtrl.js"></script>
+
+    <script src="app/controllers/payCtrl.js"></script>
+
+    <script src="app/controllers/singleCtrl.js"></script>
+
+    <script src="app/controllers/orderCtrl.js"></script>
+    
+    <script src="app/services/userServices.js"></script>
+
+    <script src="app/services/authServices.js"></script>
+    
+    <script src="app/services/prodServices.js"></script>
+
+    <script src="app/services/shopServices.js"></script>
+
+    <script src="app/services/cartServices.js"></script>
+
+    <script src="app/services/payServices.js"></script>
+
+    <script src="app/services/singleServices.js"></script>
+
+    <script src="app/services/orderServices.js"></script>
+
+  </head>
+
+  <body ng-app="userApp" ng-controller="mainCtrl as main">
+    <header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav" role="banner">
+      <div class="logo">
+        <a href="index.html"><img src="assets/images/logo.png" alt=""/></a>
+       </div>
+      <div class="container">
+        <div class="navbar-header">
+          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <a href="/home">Home</a>
+            </li>
+            <li>
+              <a href="/team">Team</a>
+            </li>
+            <li>
+              <a href="/shop">Shop</a>
+            </li>
+            <li>
+              <a href="/contact">Contact</a>
+            </li>
+            <li>
+              <a ng-show = "main.isLoggedIn" href="/checkout">Cart</a>
+            </li>
+            <li>
+              <a ng-show = "!main.isLoggedIn" href="/login">Login</a>
+            </li>
+            <li>
+              <a ng-show = "main.isLoggedIn" href="#" ng-click="main.logout()">Logout</a>
+            </li>
+            <li>
+              <a ng-show = "!main.isLoggedIn" href="/register">Register</a>
+            </li>
+            <li>
+              <a ng-show = "main.isAdmin" href="/admin">Admin</a>
+            </li>
+            <li>
+              <a ng-show = "main.isAdmin" href="/orders">Orders</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    
+  </div>
+      <!-- Links -->
+
+<div ng-view></div>
+
+
+<div class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <ul class="footer_box">
+          <h4>About</h4>
+          <br>
+          <li><a href="/team">Team</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <ul class="footer_box">
+          <h4>Customer Support</h4>
+          <br>
+          <li><a href="/contact">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <ul class="footer_box">
+          <h4>Follow Us</h4>
+          <ul class="social">	
+            <li class="facebook"><a href="#"><span> </span></a></li>
+            <li class="twitter"><a href="#"><span> </span></a></li>
+            <li class="instagram"><a href="#"><span> </span></a></li>	
+            <li class="pinterest"><a href="#"><span> </span></a></li>	
+            <li class="youtube"><a href="#"><span> </span></a></li>										  				
+            </ul>
+             
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="assets/js/jquery.min.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<div class="main">
+	<div class="shop_top">
+		<div class="container">
+			<div class="col-md-6 shop_box">
+				<div class="Payment_Box">
+					<p><b>Total balance:</b>{{cart.price}}$</p>
+					<ul class="buttons1">
+						<li class="cart1"><a href="/payment">GO FOR PAYMENT</a></li>
+					</ul>
+					<br>
+				</div>
+				<div class="cart"><br><a href="/shop">continue shopping</a></div>
+			</div>
+			<div ng-repeat = "product in cart.products">
+				<div class="row shop_box-top">
+					<div class="col-md-6 shop_box">
+						<img src={{product.link}} class="img-responsive" alt=""/>
+						<div class="shop_desc1">
+							<h3><a>{{product.name}}</a></h3>
+							<span class="actual">{{product.price}}$</span><br>
+							<div class="prosuct-qty">
+								<p>Quantity: {{product.quantity}}</p>
+	
+							</div>
+							<div class="prosuct-qty">
+								<p>Size: {{product.size}}</p>
+	
+							</div>
+							<button class="exclusive" ng-click="cart.rmvProduct({name : product.name,size : product.size,quantity : product.quantity});">
+								<span>Remove from cart</span>
+							</button>
+							
+						</div>
+						
+					</div>
+				</div>
+				<div class="col-md-6 shop_box"></div>
+			</div>
+		</div>
+	</div>
+</div>

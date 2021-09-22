@@ -1,0 +1,45 @@
+
+<div class="main">
+<div class="shop_top">
+<div class="container">
+		<div class="col-md-6">
+			<div class="login-title">
+			<h4 class="title">Registered Customers</h4>
+			<div id="loginbox" class="loginbox">
+				<form ng-submit="main.doLogin(loginData);" name="login" id="login-form">
+					<fieldset class="input">
+					<p id="login-form-username">
+						<label for="modlgn_username">Email</label>
+						<input id="modlgn_username" type="text" name="email" class="inputbox" size="18" autocomplete="off" ng-model="main.loginData.email">
+					</p>
+					<p id="login-form-password">
+						<label for="modlgn_passwd">Password</label>
+						<input id="modlgn_passwd" type="password" name="password" class="inputbox" size="18" autocomplete="off" ng-model="main.loginData.password">
+					</p>
+					<div class="remember">
+						<input type="submit" name="Submit" class="button" value="Login"><div class="clear"></div>
+						</div>
+					</fieldset>
+					</form>
+			</div>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+	</div>
+</div>
+
+<br>
+
+<div class="jumbotron text-center" ng-show="main.loading">
+    <span class="glyphicon glyphicon-repeat spinner"></span>
+    <p>Loading...</p>
+</div>
+
+<div class="row show-hide-message" ng-show="main.successMsg">
+    <div class="alert alert-success">{{ main.successMsg}}</div>
+</div>
+<br>
+<div class="row show-hide-message" ng-show="main.errorMsg">
+    <div class="alert alert-danger">{{ main.errorMsg}}</div>
+</div>

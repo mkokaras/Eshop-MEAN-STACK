@@ -1,0 +1,51 @@
+<div class="main">
+	<div class="shop_top">
+		<div class="container">
+			<div class="row">
+			<div class="col-md-9 single_left">
+				<div class="single_image">
+					<img class="rounded mx-auto d-block" src={{single.products[0].link}} />
+				</div>
+					<!-- end product_slider -->
+					<div class="single_right">
+						<h3>{{single.products[0].name}}</h3>
+						<p class="m_10">When it comes to basketball, there is no way around Nike – the brand with the Swoosh belongs to the game like dunks, three-pointers and cross-overs. Whether in the NBA, European leagues or your neighborhood</p>
+						<ul class="options">
+							<h4 class="m_12">Select a Size(cm) to Add to Cart</h4>
+							<span ng-repeat="prod in single.products">
+								<li><a ng-click="single.enterProductCart({productname : prod.name,size : prod.size});">{{prod.size}}</a></li>
+							</span>
+						</ul>
+						<div class="social_buttons">
+							<button type="button" class="btn1 btn1-default1 btn1-twitter" onclick="">
+								<i class="icon-twitter"></i> Tweet
+							</button>
+							<button type="button" class="btn1 btn1-default1 btn1-facebook" onclick="">
+								<i class="icon-facebook"></i> Share
+							</button>
+						</div>
+					</div>
+					<div class="clear"> </div>
+			</div>
+
+
+			<div class="col-md-3">
+				</div>
+			</div>
+		</div>		
+		<div class="desc">
+			<h4>Description</h4>
+			<p>When it comes to basketball, there is no way around Nike – the brand with the Swoosh belongs to the game like dunks, three-pointers and cross-overs. Whether in the NBA, European leagues or your neighborhood</p>
+			<div class="row show-hide-message" ng-show="single.successMsg">
+				<div class="alert alert-success">{{ single.successMsg}}</div>
+			</div>
+			<br>
+			<div class="row show-hide-message" ng-show="single.errorMsg">
+				<div class="alert alert-danger">{{ single.errorMsg}}</div>
+			</div>
+		</div>
+		<div class="row">
+			</div>
+		</div>	
+	</div>
+</div>
